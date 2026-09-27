@@ -1,0 +1,17 @@
+Bars 1.0 Bars.qml
+Button 1.0 Button.qml
+Card 1.0 Card.qml
+Chart 1.0 Chart.qml
+Chip 1.0 Chip.qml
+ConfirmDialog 1.0 ConfirmDialog.qml
+Donut 1.0 Donut.qml
+Gauge 1.0 Gauge.qml
+Hero 1.0 Hero.qml
+KV 1.0 KV.qml
+Panel 1.0 Panel.qml
+Ring 1.0 Ring.qml
+ListRow 1.0 ListRow.qml
+SectionHeader 1.0 SectionHeader.qml
+Separator 1.0 Separator.qml
+Slider 1.0 Slider.qml
+TempGraphCard 1.0 TempGraphCard.qml
