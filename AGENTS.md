@@ -102,16 +102,28 @@ It needs a Hyprland seat; without one it exits 2 and skips.
 `quickshell -p .` is a nonterminating visual run on a Hyprland seat — not a
 pass/fail check; runtime validation needs a live session.
 
-## Rollback
+## Version control & rollback
 
-There is no version control here (by user choice), and `/tmp` backups do not
-survive. `tools/snapshot.sh` writes a timestamped tar of the whole checkout to
-`~/.local/state/klipshell/snapshots/` (newest 20 kept) and prints its sha256 —
-run it before any risky multi-file pass.
+Public repo: `git@github.com:CWebb89/Klipshell.git` (branch `main`). The local
+checkout is the source of truth and git is the primary revert source.
+`tools/snapshot.sh` remains a second net for risky multi-file passes — it writes
+a timestamped tar of the whole checkout to
+`~/.local/state/klipshell/snapshots/` (newest 20 kept) and prints its sha256.
 
 ```bash
 ./tools/snapshot.sh pre-refactor
 ```
+
+One commit identity for this repo: `webbwerkx <webbwerkx@gmail.com>`, set
+repo-locally (there is no machine-wide git identity).
+
+**The repo is public, so real printer addresses never enter a tracked file.**
+`src/config/printers.json` is gitignored (it is machine-local and the printer
+editor writes it back in place); a fresh clone gets it from
+`src/config/printers.example.json` via `install.sh`. Docs count too —
+`docs/HISTORY.md`'s live-printer addresses were replaced with the example host
+before the first push. Check `git check-ignore -v <path>` and grep the tracked
+set before adding anything that describes the LAN.
 
 ## Instance discipline
 
