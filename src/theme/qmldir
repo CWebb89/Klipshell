@@ -1,0 +1,4 @@
+singleton Colors 1.0 Colors.qml
+singleton Icons 1.0 Icons.qml
+singleton Metrics 1.0 Metrics.qml
+singleton Type 1.0 Type.qml

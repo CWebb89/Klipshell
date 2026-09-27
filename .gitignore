@@ -1,0 +1,14 @@
+# Runtime printer config — machine-local. This is where real Moonraker hosts
+# live, and the printer editor writes it back in place, so it is never
+# committed. install.sh seeds it from printers.example.json on a fresh clone.
+src/config/printers.json
+
+# ImageMagick `info:` dump left in the checkout root by a stray convert(1) call.
+/info
+
+# Agent session scratch. Plans are regenerated per session; .pi/skills/ is kept
+# because it documents this project's verification loop.
+.pi/plans/
+
+__pycache__/
+*.pyc
