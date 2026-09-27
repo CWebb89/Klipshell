@@ -50,11 +50,11 @@ up the same Material You palette as the rest of the desktop.
 ## ✦ Screenshots
 
 <div align="center">
-  <a href="docs/video/klipshell-demo.mp4">
+  <a href="https://cdn.jsdelivr.net/gh/CWebb89/Klipshell@main/docs/video/klipshell-demo.mp4">
     <img src="docs/video/klipshell-demo-poster.jpg" alt="Demo video" width="820">
   </a>
   <br>
-  <sub>Two-minute demo: console, history, bed mesh, GCode viewer, machine, LayerMind. Click to play.</sub>
+  <sub>Click to play, two minutes: console, history, bed mesh, GCode viewer, machine, LayerMind.</sub>
 </div>
 
 <br>
@@ -96,10 +96,39 @@ for full resolution.
 | `5` | **Heightmap** | Bed mesh as three stacked surfaces with a Z colour ramp and an orbitable camera. Canvas 2D, no echarts. |
 | `6` | **GCODE VIEWER** | Scrubber, play to 20×, layer navigation, colour by extruder / feed rate / feature, five render qualities. |
 | `7` | **MACHINE** | Host load rings, network, endstops, update manager, and the `config` / `gcodes` / `docs` browsers. Upload, rename, copy, delete, and edit a file in `$EDITOR`. |
-| `8` | **LAYERMIND** | The [LayerMind](https://github.com/webbwerkx/LayerMind) daemon's per-printer snapshot. |
+| `8` | **LAYERMIND** | The [LayerMind](https://github.com/webbwerkx/LayerMind) daemon's per-printer snapshot. Read-only, and the format is still moving: see [LayerMind](#-layermind). |
 
 Clicking a file on the dashboard's status card starts a print, after a
 confirmation. Pause, resume, cancel and E-STOP live in the header.
+
+<br>
+
+---
+
+## ✦ LayerMind
+
+[LayerMind](https://github.com/webbwerkx/LayerMind) is a separate project, not a
+dependency of this one: a Rust daemon per printer that sits above Moonraker,
+normalises a `PrinterContext`, tracks hardware health, and runs failure-pattern
+and AI diagnostics.
+
+None of that is here. The LAYERMIND view is read-only, showing the snapshot the
+daemon writes to `~/.local/state/layermind/<printer>.json` (printer name stemmed,
+so `Voron V2.4` reads `voron24.json`), re-read every 4 seconds while it is on
+screen.
+
+It is not finished, on both sides:
+
+- The daemon writes a JSON **array**; the view reads a top-level object, so
+  against a real snapshot it renders no rows at all.
+- Even with that fixed it only renders flat data: top-level strings and numbers,
+  then the first array of strings. LayerMind's fields are nested (`summary`,
+  `health`, `print_history`, `current_state`), so it would show `printer_id` and
+  `generated_at` and stop.
+- Diagnostic colour is guessed from the message text (`error`, `warn`, `ok`). The
+  schema declares no severity.
+- The green dot means the snapshot file exists, not that it is fresh, and
+  klipshell cannot start or stop the daemon.
 
 <br>
 
