@@ -75,7 +75,42 @@ ffmpeg -i source.mkv -c:v libx264 -crf 23 -preset slow -pix_fmt yuv420p -an \
 
 The poster is a real frame from 18s (the bed mesh), with the play badge drawn on.
 
-GitHub does not render `<video>` in a README, so the README shows that poster
-linked to the MP4. For a player embedded inline instead, drag the MP4 into the
-README editor on GitHub: it uploads to `user-attachments` and returns a URL that
-does render as a player, and the file no longer needs to sit in the repo.
+## Serving the video
+
+GitHub will not play this MP4, and neither will the two obvious links, both of
+which were checked against the live repo:
+
+| URL | What happens |
+|---|---|
+| `/blob/main/docs/video/klipshell-demo.mp4` | refuses to play it |
+| `raw.githubusercontent.com/...` | `content-type: application/octet-stream` + `nosniff`, so it downloads |
+| `cdn.jsdelivr.net/gh/CWebb89/Klipshell@main/...` | `content-type: video/mp4`, `accept-ranges: bytes`, plays with seeking |
+
+The blob page's own payload says why. At 8.07 MB the file is over GitHub's
+threshold, so it is marked unrenderable and the page offers raw instead:
+
+```
+blob.blobSize         = 7.69 MB
+blob.large            = True
+blob.renderImageOrRaw = True
+```
+
+Checking that flag is how the size threshold was pinned down, since it is in the
+server-rendered payload rather than the visible page:
+
+```fish
+curl -s https://github.com/CWebb89/Klipshell/blob/main/docs/video/klipshell-demo.mp4 \
+  | python3 -c "import json,re,sys; html=sys.stdin.read(); \
+      d=json.loads(re.search(r'react-app.embeddedData\">(.*?)</script>', html, re.S).group(1)); \
+      print(d['payload']['codeViewBlobLayoutRoute']['blob'])"
+```
+
+So the README's poster links the jsDelivr URL. The file still lives in the repo
+as the source that URL serves. jsDelivr caches `@main`, so after re-encoding the
+video give it a few minutes before the new bytes are served.
+
+For a player embedded **inside** the README instead, drag the MP4 into the README
+editor on github.com. That uploads it to `user-attachments` and returns a URL the
+markdown renderer does turn into a player, which also takes the 8 MB back out of
+git history. A `<video>` tag in the README is stripped, so that upload is the only
+way to get one inline.
