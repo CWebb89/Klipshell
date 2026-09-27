@@ -8,8 +8,8 @@
   <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" alt="License">
   <img src="https://img.shields.io/badge/Quickshell-0.3.1-6c9cd6?style=for-the-badge" alt="Quickshell">
   <img src="https://img.shields.io/badge/Qt_6-QML-41cd52?style=for-the-badge&logo=qt&logoColor=white" alt="Qt 6">
-  <img src="https://img.shields.io/badge/views-8-ff9d73?style=for-the-badge" alt="8 views">
-  <img src="https://img.shields.io/badge/Klipper-Moonraker-ff7a3d?style=for-the-badge" alt="Klipper">
+  <img src="https://img.shields.io/badge/views-8-5e5791?style=for-the-badge" alt="8 views">
+  <img src="https://img.shields.io/badge/Klipper-Moonraker-463f77?style=for-the-badge" alt="Klipper">
   <img src="https://img.shields.io/github/last-commit/CWebb89/Klipshell?style=for-the-badge&color=teal" alt="Last commit">
 </div>
 
@@ -180,21 +180,27 @@ layout or an endpoint.
 
 ## ✦ Screenshots
 
-<!-- Uncomment once the images are in docs/screenshots/ (see that folder's README
-     for the expected filenames and the capture commands).
+<table>
+  <tr>
+    <td width="50%"><a href="docs/screenshots/dashboard.png"><img src="docs/screenshots/dashboard.png" alt="Dashboard"></a></td>
+    <td width="50%"><a href="docs/screenshots/console.png"><img src="docs/screenshots/console.png" alt="GCode console"></a></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots/gcode-files.png"><img src="docs/screenshots/gcode-files.png" alt="G-CODE FILES"></a></td>
+    <td><a href="docs/screenshots/history.png"><img src="docs/screenshots/history.png" alt="History"></a></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots/heightmap.png"><img src="docs/screenshots/heightmap.png" alt="Bed mesh"></a></td>
+    <td><a href="docs/screenshots/gcode-viewer.png"><img src="docs/screenshots/gcode-viewer.png" alt="GCode viewer"></a></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots/machine.png"><img src="docs/screenshots/machine.png" alt="Machine"></a></td>
+    <td><a href="docs/screenshots/layermind.png"><img src="docs/screenshots/layermind.png" alt="LayerMind"></a></td>
+  </tr>
+</table>
 
-<p align="center">
-  <img src="docs/screenshots/dashboard.png" width="49%" alt="Dashboard">
-  <img src="docs/screenshots/console.png" width="49%" alt="Console">
-</p>
-<p align="center">
-  <img src="docs/screenshots/gcode-viewer.png" width="49%" alt="GCode viewer">
-  <img src="docs/screenshots/heightmap.png" width="49%" alt="Bed mesh">
-</p>
--->
-
-Captures go here. `docs/screenshots/README.md` lists the filenames this grid
-expects and the `shot` commands to take them.
+All eight views, captured mid-print on a Voron V2.4 at 1911×1071. Click any
+shot for full resolution.
 
 <br>
 

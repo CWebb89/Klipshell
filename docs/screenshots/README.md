@@ -1,54 +1,54 @@
 # Screenshots
 
-Drop captures here using the filenames below and the README's screenshot grid
-picks them up (the `<img>` block is in `README.md` under **Screenshots** —
-uncomment it once the files exist).
+Nine captures live in `~/Pictures/screenshots/`. Eight are installed here, one
+per view, at 1911×1071 (the window, cropped off the 1920×1080 monitor). The
+README's Screenshots section uses all eight.
 
-| Filename | View | Notes |
-|---|---|---|
-| `dashboard.png` | Dashboard | The full window at 1900×1060 |
-| `console.png` | Console | With a few commands sent |
-| `gcode-files.png` | G-CODE FILES | |
-| `history.png` | History | |
-| `heightmap.png` | Heightmap | A mesh with visible deviation reads best |
-| `gcode-viewer.png` | GCODE VIEWER | A real model, mid-scrub |
-| `machine.png` | MACHINE | |
-| `layermind.png` | LAYERMIND | Needs the LayerMind daemon |
-| `settings.png` | Settings popup | |
+| File | View |
+|---|---|
+| `dashboard.png` | Dashboard, mid-print |
+| `console.png` | GCode console |
+| `gcode-files.png` | G-CODE FILES |
+| `history.png` | History |
+| `heightmap.png` | Heightmap |
+| `gcode-viewer.png` | GCODE VIEWER |
+| `machine.png` | MACHINE |
+| `layermind.png` | LAYERMIND |
 
-A short demo video is welcome too — record it as `demo.mp4` and link it from the
-README's Screenshots section.
+Still wanted: `settings.png` (the six-tab popup) and a short `demo.mp4`. The
+popup is an in-window scrim overlay, not a layer surface, so `shot window` is its
+capture tool — `shot popup` is for real layer-shell surfaces, which klipshell
+doesn't open.
 
 ## Capturing
 
-The machine-wide `shot` tool handles the workspace juggling so the agent terminal
-is never in frame. **One instance at a time**, so check first:
+One instance at a time, so check first:
 
 ```fish
 quickshell list -p $PWD
 quickshell kill -p $PWD   # only if one is already running
 ```
 
-Launch-and-capture on a fresh empty workspace — it waits for the window to map,
-settles, then shoots:
+Then launch-and-capture on a fresh empty workspace, which waits for the window to
+map and settle before shooting:
 
 ```fish
-shot app docs/screenshots/dashboard.png -- quickshell -n -p $PWD
+shot app /tmp/view.png -- quickshell -n -p $PWD
 shot app docs/screenshots/demo.mp4 --video --dur 30 -- quickshell -n -p $PWD
 ```
 
-`shot app` grabs the whole focused monitor, so the wallpaper appears around the
-window — that's the honest look of the shell in place. For a window-only crop of
-an instance that's already running and focused, use `shot window`:
+`shot app` grabs the whole focused monitor, so the wallpaper and the compositor's
+window border end up in the frame. The eight installed here were cropped back to
+the window:
 
 ```fish
-shot window docs/screenshots/settings.png
+magick /tmp/view.png -crop 1911x1071+0+0 +repage docs/screenshots/machine.png
 ```
 
-The settings popup is an in-window scrim overlay, not a separate layer surface,
-so `shot window` is the right tool for it too (`shot popup` is for real
-layer-shell surfaces, which klipshell doesn't open).
+## Which capture is which view
 
-Keep the window at its native 1900×1060 — the README lays images out two per row,
-so matching aspect ratios look best. Lossless PNG for the UI; trim the video to
-under a minute and keep anything longer out of the tree.
+Every view shares the same sidebar, so the active view is identified by the
+highlighted nav row, not by the text in frame: rows start at y=35, are 38px tall
+on a 42px pitch, and the selected row's fill is `0.08 × surfaceText` over
+`surfaceContainerLowest`. That band is unique per capture, which is how the table
+above was filled in.
