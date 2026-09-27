@@ -43,16 +43,43 @@ server and no Python daemon. One process, two dependencies: `quickshell` and
 Colours come from [matugen](https://github.com/InioX/matugen), so the window picks
 up the same Material You palette as the rest of the desktop.
 
-```
-┌─────────────┬────────────────────────────────────────────┐
-│ klipshell   │ DASHBOARD  CONSOLE  FILES  HISTORY         │
-├─────────────┼────────────────────────────────────────────┤
-│ 1 dashboard │  ┌────────────┐  ┌────────────┐            │
-│ 2 console   │  │  STATUS    │  │  TOOLHEAD  │            │
-│ 3 files     │  │  TEMPS     │  │  EXTRUDER  │            │
-│ 4 history   │  └────────────┘  └────────────┘            │
-└─────────────┴────────────────────────────────────────────┘
-```
+<br>
+
+---
+
+## ✦ Screenshots
+
+<div align="center">
+  <a href="docs/video/klipshell-demo.mp4">
+    <img src="docs/video/klipshell-demo-poster.jpg" alt="Demo video" width="820">
+  </a>
+  <br>
+  <sub>Two-minute demo: console, history, bed mesh, GCode viewer, machine, LayerMind. Click to play.</sub>
+</div>
+
+<br>
+
+<table>
+  <tr>
+    <td width="50%"><a href="docs/screenshots/dashboard.png"><img src="docs/screenshots/dashboard.png" alt="Dashboard"></a></td>
+    <td width="50%"><a href="docs/screenshots/console.png"><img src="docs/screenshots/console.png" alt="GCode console"></a></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots/gcode-files.png"><img src="docs/screenshots/gcode-files.png" alt="G-CODE FILES"></a></td>
+    <td><a href="docs/screenshots/history.png"><img src="docs/screenshots/history.png" alt="History"></a></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots/heightmap.png"><img src="docs/screenshots/heightmap.png" alt="Bed mesh"></a></td>
+    <td><a href="docs/screenshots/gcode-viewer.png"><img src="docs/screenshots/gcode-viewer.png" alt="GCode viewer"></a></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots/machine.png"><img src="docs/screenshots/machine.png" alt="Machine"></a></td>
+    <td><a href="docs/screenshots/layermind.png"><img src="docs/screenshots/layermind.png" alt="LayerMind"></a></td>
+  </tr>
+</table>
+
+All eight views, captured mid-print on a Voron V2.4 at 1911×1071. Click any shot
+for full resolution.
 
 <br>
 
@@ -173,34 +200,6 @@ listen to. It needs a Hyprland seat and skips without one.
 `docs/HISTORY.md` is the engineering log, dated and chronological, including what
 turned out to be wrong and the numbers that settled it. Grep it before changing
 layout or an endpoint.
-
-<br>
-
----
-
-## ✦ Screenshots
-
-<table>
-  <tr>
-    <td width="50%"><a href="docs/screenshots/dashboard.png"><img src="docs/screenshots/dashboard.png" alt="Dashboard"></a></td>
-    <td width="50%"><a href="docs/screenshots/console.png"><img src="docs/screenshots/console.png" alt="GCode console"></a></td>
-  </tr>
-  <tr>
-    <td><a href="docs/screenshots/gcode-files.png"><img src="docs/screenshots/gcode-files.png" alt="G-CODE FILES"></a></td>
-    <td><a href="docs/screenshots/history.png"><img src="docs/screenshots/history.png" alt="History"></a></td>
-  </tr>
-  <tr>
-    <td><a href="docs/screenshots/heightmap.png"><img src="docs/screenshots/heightmap.png" alt="Bed mesh"></a></td>
-    <td><a href="docs/screenshots/gcode-viewer.png"><img src="docs/screenshots/gcode-viewer.png" alt="GCode viewer"></a></td>
-  </tr>
-  <tr>
-    <td><a href="docs/screenshots/machine.png"><img src="docs/screenshots/machine.png" alt="Machine"></a></td>
-    <td><a href="docs/screenshots/layermind.png"><img src="docs/screenshots/layermind.png" alt="LayerMind"></a></td>
-  </tr>
-</table>
-
-All eight views, captured mid-print on a Voron V2.4 at 1911×1071. Click any
-shot for full resolution.
 
 <br>
 
