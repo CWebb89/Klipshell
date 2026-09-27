@@ -1,0 +1,88 @@
+<svg viewBox="0 0 700 132" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="klipshell">
+  <title>klipshell</title>
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff7a3d"/>
+      <stop offset="1" stop-color="#ffb597"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="text-reveal">
+      <rect x="0" y="0" width="0" height="132">
+        <animate attributeName="width" from="0" to="700" dur="2.5s" begin="0.5s" fill="freeze"/>
+      </rect>
+    </clipPath>
+    <clipPath id="card">
+      <rect x="0" y="0" width="700" height="132" rx="14"/>
+    </clipPath>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="699" height="131" rx="14" fill="#1a110e" stroke="#53433e"/>
+
+  <g clip-path="url(#card)">
+    <ellipse cx="350" cy="52" rx="300" ry="40" fill="#ff9d73" opacity="0">
+      <animate attributeName="opacity" from="0" to="0.07" dur="1s" begin="0.8s" fill="freeze"/>
+    </ellipse>
+
+    <text x="350" y="56" font-family="'Courier New', 'Consolas', monospace" font-size="46"
+          font-weight="900" letter-spacing="5" text-anchor="middle" fill="url(#accent)"
+          clip-path="url(#text-reveal)">klipshell</text>
+
+    <line x1="150" y1="72" x2="550" y2="72" stroke="#53433e" stroke-width="1" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="3.2s" fill="freeze"/>
+    </line>
+
+    <line x1="100" y1="98" x2="600" y2="98" stroke="#ff9d73" stroke-width="3"
+          stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500" opacity="0">
+      <animate attributeName="stroke-dashoffset" from="500" to="0" dur="2.5s" begin="0.5s" fill="freeze"/>
+      <animate attributeName="opacity" from="0" to="0.75" dur="0.3s" begin="0.5s" fill="freeze"/>
+    </line>
+    <line x1="100" y1="96" x2="600" y2="96" stroke="#ffb597" stroke-width="1"
+          stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500" opacity="0">
+      <animate attributeName="stroke-dashoffset" from="500" to="0" dur="2.5s" begin="0.5s" fill="freeze"/>
+      <animate attributeName="opacity" from="0" to="0.3" dur="0.3s" begin="0.5s" fill="freeze"/>
+    </line>
+
+    <g filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+                        values="-560 0; 40 0; 540 0" keyTimes="0; 0.142857; 0.857143"
+                        dur="3.5s" begin="0s" fill="freeze"/>
+
+      <rect x="42" y="14" width="36" height="18" rx="3" fill="#3d322e" stroke="#53433e"/>
+      <rect x="48" y="17" width="24" height="12" rx="1" fill="#271e1a"/>
+      <line x1="50" y1="20" x2="70" y2="20" stroke="#ffb597" stroke-width="1.5" opacity="0.45"/>
+      <line x1="50" y1="23" x2="70" y2="23" stroke="#ffb597" stroke-width="1.5" opacity="0.45"/>
+      <line x1="50" y1="26" x2="70" y2="26" stroke="#ffb597" stroke-width="1.5" opacity="0.45"/>
+
+      <rect x="30" y="34" width="60" height="16" rx="2" fill="#3d322e" stroke="#53433e"/>
+      <rect x="35" y="36" width="10" height="12" rx="1" fill="#dc2626" opacity="0.85"/>
+      <rect x="48" y="36" width="24" height="12" rx="1" fill="#1a110e"/>
+      <circle cx="60" cy="42" r="3" fill="#53433e"/>
+
+      <rect x="30" y="52" width="60" height="2" fill="#53433e"/>
+      <rect x="30" y="56" width="60" height="2" fill="#53433e"/>
+      <rect x="30" y="60" width="60" height="2" fill="#53433e"/>
+
+      <rect x="38" y="64" width="44" height="12" rx="1" fill="#dc2626" opacity="0.8"/>
+      <rect x="38" y="76" width="44" height="3" fill="#a01d1d" opacity="0.6"/>
+
+      <polygon points="50,79 70,79 65,88 55,88" fill="#a08d86"/>
+      <polygon points="53,88 67,88 63,94 57,94" fill="#53433e"/>
+
+      <circle cx="60" cy="98" r="1.6" fill="#ffb597">
+        <animate attributeName="r" values="1.6;0.5;1.6" dur="0.4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <text x="350" y="120" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12"
+          fill="#d8c2ba" text-anchor="middle" letter-spacing="2.4" opacity="0">
+      MOONRAKER CONTROL SURFACE FOR KLIPPER
+      <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="3.3s" fill="freeze"/>
+    </text>
+  </g>
+</svg>
