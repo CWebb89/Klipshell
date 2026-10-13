@@ -4,7 +4,7 @@ import "../theme"
 import "../config"
 
 // GCode console: scrolled transcript from /server/gcode_store + keyboard-first
-// input row (event.text accumulation, upstream menu-style). Enter sends,
+// input row (event.text accumulation, palette-style). Enter sends,
 // Backspace edits, Esc clears the pending buffer.
 // Reads as a terminal: a darker bordered viewport holding the transcript (a
 // prompt glyph per sent command, output dimmed under it) with a bordered input

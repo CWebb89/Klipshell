@@ -2,7 +2,7 @@ import QtQuick
 import "../theme"
 
 // Status chip: optional icon + bold caption (non-pill) or bordered pill with
-// a dot (pill: true) — detail-pill grammar. color drives both. Filled
+// a dot (pill: true). color drives both. Filled
 // pills get a soft halo (glow) by default so an active/live status (e.g.
 // "PRINTING") reads as the most prominent thing in the card. An icon replaces
 // the dot, so a chip never carries both.

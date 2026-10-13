@@ -1,7 +1,7 @@
 import QtQuick
 import "../theme"
 
-// panel slider grammar as a bare bar: 4px track, filled width
+// Bare-bar gauge: 4px track, filled width
 // animated 140ms OutCubic. color + ratio drive the fill. A soft, wider
 // halo sits behind the fill for a bit of glow — decorative only, sized
 // off the same width expression so it always matches the fill exactly.

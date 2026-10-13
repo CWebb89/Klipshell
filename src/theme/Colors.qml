@@ -79,7 +79,7 @@ QtObject {
     // tempWarm/tempHot precedent below (~11:1 on surface).
     readonly property color success: "#4ade80"
 
-    // shell grammar tokens (shell/Ui + theme tokens): selection is accent
+    // Selection and state tokens: selection is accent
     // text on a fg@8% fill, separators are fg@12% hairlines, pressed is
     // fg@22%, hover fg@8%.
     readonly property color selectedFill: Qt.rgba(surfaceText.r, surfaceText.g,

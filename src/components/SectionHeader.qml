@@ -1,7 +1,7 @@
 import QtQuick
 import "../theme"
 
-// section header: small bold label introducing a section. Not
+// SectionHeader: small bold label introducing a section. Not
 // accent, not ALL-CAPS — reads as a document heading inside a card. Sits on
 // the textTertiary rung (5.6:1) so it never competes with the values it
 // introduces (textPrimary, 14.3:1). Optional leading icon at the same size,

@@ -1,6 +1,6 @@
 ---
 name: quickshell-dev
-description: Live UI verification loop for klipshell (and other Quickshell shells on this machine). Use when launching or verifying the shell on a Hyprland seat, capturing dashboard/console screenshots, reviewing Quickshell UI changes, or grading a shell against the shell grammar. Encodes the launch → capture → drive → vision-review → grade loop; static checks alone (qmllint) are never enough before calling a UI change done.
+description: Live UI verification loop for klipshell (and other Quickshell shells on this machine). Use when launching or verifying the shell on a Hyprland seat, capturing dashboard/console screenshots, reviewing Quickshell UI changes, or grading a shell against the shell grammar in AGENTS.md. Encodes the launch → capture → drive → vision-review → grade loop; static checks alone (qmllint) are never enough before calling a UI change done.
 ---
 
 # quickshell-dev — live UI verification loop

@@ -1,7 +1,7 @@
 import QtQuick
 import "../theme"
 
-// panel-style action button: flat, state-driven fills (fg@8% hover,
+// Action button: flat, state-driven fills (fg@8% hover,
 // fg@22% pressed) + caption-bold label, with an optional leading icon
 // glyph and a small tactile press-scale. variant: primary (accent),
 // danger (urgent — error text on an error wash), plain (outline),

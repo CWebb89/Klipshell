@@ -1,7 +1,7 @@
 import QtQuick
 import "../theme"
 
-// ConfirmDialog port: transparent click-away wash (no dimming),
+// ConfirmDialog: transparent click-away wash (no dimming),
 // square card with message +
 // Cancel/Confirm pair, keyboard-driven (Esc cancel, arrows/Tab swap,
 // Enter confirm). host wires handleKey() into its key catcher. The card

@@ -2,7 +2,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import "../theme"
 
-// Selectable list row: menu selection — accent text on selectedFill
+// Selectable list row: accent text on selectedFill
 // when selected, hover highlight via a dimmed outline wash. An optional
 // leading icon gives the row an identity that survives the colour change.
 Item {

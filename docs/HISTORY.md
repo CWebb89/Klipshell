@@ -841,7 +841,7 @@ Panel.qml body rectangle. User confirmed good.
 - Type rescaled (kept old token NAMES, only values): caption 10 / small 12 / body 13 / title 14 / heading 16 / large 20 / medium 24 / xlarge 28.
 - Metrics: controlHeight 28, rowHeight 30, panelPadding 18, radiusSmall/Med/Large 6/10/14, gaugeTrack 4, gaugeKnob 14.
 - Colors: +hoverFill(0.08), pressedFill(0.22), separator(0.12), urgent(=error), `function alpha(c,a)`.
-- New components: Button (variant primary|danger|plain|soft; use `active:` NOT `enabled`, and MouseArea uses `enabled`); Slider (panel slider port: animated fill/knob 140ms OutCubic off while dragging, knob scale 1.15 hover, drag+wheel, moved/released; trackArea members knob/thumbStart/usable — never name a member `left`, shadows anchors.left); ConfirmDialog (scrim alpha(bg,0.7), centered card, keyboard handleKey); Hero (title+detail pill+upper meta; `titleRightMargin` to clear a side % readout); Chip gained `pill:true` variant.
+- New components: Button (variant primary|danger|plain|soft; use `active:` NOT `enabled`, and MouseArea uses `enabled`); Slider (animated fill/knob 140ms OutCubic off while dragging, knob scale 1.15 hover, drag+wheel, moved/released; trackArea members knob/thumbStart/usable — never name a member `left`, shadows anchors.left); ConfirmDialog (scrim alpha(bg,0.7), centered card, keyboard handleKey); Hero (title+detail pill+upper meta; `titleRightMargin` to clear a side % readout); Chip gained `pill:true` variant.
 - Service core query: +display_status,gcode_move,heater_generic,fan → normalizes fanPower, speedFactor, flowFactor, displayMessage, heaters[]. Added fetchFileMetadata, deleteFile, `_fileUrl` (encodeURIComponent per segment, keeps "/").
 - Dashboard: Hero print card, big % (right-reserved), 8px gauge, action row (CANCEL/E-STOP → ConfirmDialog), FAN/SPEED/FLOW, animated thermal gauges + presets, TOOLHEAD+part-cooling, KIPPER pill+display_message.
 - Controls: 5 tabs incl TUNE (Slider SPEED=M220, FLOW=M221, FAN=M106 S{v*2.55}); MACROS via Flow.
@@ -1114,7 +1114,7 @@ as the Temperature card (graph stays as-is).
   temp graph embedded in Dashboard). Printer selector = header chip "● <printer> ▾" → popup.
 - MoonrakerService has Mainsail setters (setHeaterTemp, setFanPercent, setSpeed/FlowFactor, jog, moveHome*,
   motorsOff, zAdjust, zOffsetApply, extrude) + state.zOffset. Controls view has MOTION(toolhead)+EXTRUDE tabs.
-- Reusable components: Chart.qml, TempGraphCard.qml, Card.qml, Button/Chip/Gauge/Slider/KV/ListRow/section header.
+- Reusable components: Chart.qml, TempGraphCard.qml, Card.qml, Button/Chip/Gauge/Slider/KV/ListRow/SectionHeader.qml.
 
 # SESSION 1 DONE (2026-09-20pm) — Reorderable/customizable Dashboard (Mainsail foundation)
 Implemented exactly per the 3-session plan's Session 1. Verified: lint exit 0, boot clean
@@ -1530,7 +1530,7 @@ fetchJobQueue() call in _action. Queue.qml + qmldir entry gone. Grep `queue` = 0
   preset row = name pill (click→key-capture edit, `settingsView.editing >= 0` routed in
   MainWindow keyCatcher before view keys) + HOTEND ±5 + BED ±5 + HIDE/SHOW + ✕ delete +
   ADD PRESET row. Repeater delegate uses `required property int index` (Repeater
-  provides it — panel slider precedent).
+  provides it — slider precedent).
 
 ## Gotchas / notes
 - Settings Repeater delegate Row with `required property int index` + `required property

@@ -1,8 +1,8 @@
 pragma Singleton
 import QtQuick
 
-// derived type scale (theme fonts are 10-28). Tokens kept verbatim
-// where views already consume them; values now match upstream density.
+// Type scale (theme fonts are 10-28). Tokens kept verbatim
+// where views already consume them.
 QtObject {
     readonly property string family: "JetBrainsMono Nerd Font Mono"
     readonly property int sizeCaption: 14

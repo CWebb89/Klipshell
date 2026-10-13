@@ -1,7 +1,7 @@
 pragma Singleton
 import QtQuick
 
-// Structural spacing + geometry tokens (style spacing grammar).
+// Structural spacing + geometry tokens.
 QtObject {
     readonly property int hairline: 1
     readonly property int spacing: 8
@@ -31,7 +31,7 @@ QtObject {
     readonly property int xxl: 20
     readonly property int huge: 24
 
-    // gauge/slider (panel slider: track 11% of control height, knob 38%)
+    // gauge/slider (track 11% of control height, knob 38%)
     readonly property int gaugeTrack: 5
     readonly property int gaugeKnob: 19
 

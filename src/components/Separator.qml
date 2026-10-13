@@ -1,7 +1,7 @@
 import QtQuick
 import "../theme"
 
-// panel separator: 1px section divider at fg@12% — legible against
+// Separator: 1px section divider at fg@12% — legible against
 // the card without competing with text or borders.
 Rectangle {
     id: root

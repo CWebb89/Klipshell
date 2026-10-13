@@ -1,7 +1,7 @@
 import QtQuick
 import "../theme"
 
-// panel slider port: 4px track, animated fill/knob (140ms OutCubic,
+// Slider: 4px track, animated fill/knob (140ms OutCubic,
 // disabled while dragging), knob grows on hover, wheel + drag input.
 // Label + live readout flank the track.
 Item {

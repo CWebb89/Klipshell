@@ -1,7 +1,7 @@
 import QtQuick
 import "../theme"
 
-// panel hero port: bold title with a trailing accent detail pill,
+// Hero: bold title with a trailing accent detail pill,
 // uppercase letter-spaced caption meta below.
 Item {
     id: root
